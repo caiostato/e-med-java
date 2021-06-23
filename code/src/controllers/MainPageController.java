@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 /**
@@ -22,9 +23,11 @@ public class MainPageController {
     Button buttonAdmin;
     @FXML
     Button buttonSair;
+    @FXML
+    BorderPane borderpane;
     
     public void clickButtonMedico() throws Exception{
-        Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/Medico_login_screen.fxml"));
+        Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/MedicoLoginScreen.fxml"));
         Stage window = (Stage)this.buttonMedico.getScene().getWindow();
         window.setScene(new Scene(root, 1366, 720));
     }

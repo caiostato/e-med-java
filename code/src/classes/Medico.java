@@ -18,11 +18,16 @@ import conexao.ConexaoBD;
  */
 public class Medico extends Funcionario{
 
-	private int crm;
+	private String crm;
 	private String password;
 
     //construtor
-    public Medico(String crm, String password,String nome, String cpf, String email) {
+	public Medico(String crm, String password) {
+		this.setCrm(crm);
+		this.setPassword(password);
+	}
+	
+    public Medico(String crm, String password,String nome, String cpf, String email){
         super(nome,cpf,email);
     }
     
@@ -32,7 +37,10 @@ public class Medico extends Funcionario{
     }
     
 	@Override
-    boolean login(String login,String password){
+	public boolean login(){
+		String login = this.crm;
+		String password = this.password;
+		
         boolean result = false;
         String sql = "";
         try {
@@ -63,11 +71,11 @@ public class Medico extends Funcionario{
         return result;
     }
 
-	public int getCrm() {
+	public String getCrm() {
 		return crm;
 	}
 
-	public void setCrm(int crm) {
+	private void setCrm(String crm) {
 		this.crm = crm;
 	}
 
@@ -75,7 +83,7 @@ public class Medico extends Funcionario{
 		return password;
 	}
 
-	public void setPassword(String password) {
+	private void setPassword(String password) {
 		this.password = password;
 	};
     

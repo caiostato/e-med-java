@@ -23,8 +23,12 @@ public abstract class Funcionario {
         this.email = email;
     }
     
-    //functions
-    boolean login(String id, String password){
+    public Funcionario() {
+		// TODO Auto-generated constructor stub
+	}
+
+	//functions
+    boolean login(){
         boolean result = false;
         return result;
     };

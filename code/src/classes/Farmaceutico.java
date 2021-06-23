@@ -21,7 +21,7 @@ public class Farmaceutico extends Funcionario{
     
     //functions
     @Override
-    boolean login(String crf,String password){
+    boolean login(){
         boolean result = false;
         //consulta banco de dados e verifica ha login
         
