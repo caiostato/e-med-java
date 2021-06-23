@@ -1,50 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-color: #222;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MedicoLoginScreenController">
-   <children>
-      <Pane prefHeight="720.0" prefWidth="421.0">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: gray;" type="BorderPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MedicoLoginScreenController">
+   <left>
+      <AnchorPane prefHeight="720.0" prefWidth="452.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="263.0" fitWidth="263.0" layoutX="79.0" layoutY="132.0">
-               <image>
-                  <Image url="@../images/medico_img_png.png" />
-               </image>
-            </ImageView>
+            <Pane prefHeight="720.0" prefWidth="450.0" style="-fx-background-color: #222;">
+               <children>
+                  <ImageView fitHeight="261.0" fitWidth="261.0" layoutX="95.0" layoutY="209.0">
+                     <image>
+                        <Image url="@../images/medico_img_png.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="buttonSair" layoutX="8.0" layoutY="7.0" mnemonicParsing="false" onAction="#ClickButtonSair" prefHeight="82.0" prefWidth="88.0" style="-fx-background-color: #222;">
+                     <graphic>
+                        <ImageView fitHeight="65.0" fitWidth="65.0">
+                           <image>
+                              <Image url="@../images/back_button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
          </children>
-      </Pane>
-      <Pane layoutX="421.0" prefHeight="720.0" prefWidth="946.0" style="-fx-background-color: aliceblue;">
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: aliceblue;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="textField" layoutX="412.0" layoutY="255.0" prefHeight="36.0" prefWidth="218.0" style="-fx-background-color: lightgrey;">
+            <Label layoutX="186.0" layoutY="364.0" text="SENHA:">
                <font>
-                  <Font name="Segoe UI" size="14.0" />
+                  <Font name="Segoe UI Bold" size="18.0" />
                </font>
-            </TextField>
-            <Text layoutX="325.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CRM:" wrappingWidth="51.625">
+            </Label>
+            <Label layoutX="306.0" layoutY="147.0" text="Entrar como Médico">
                <font>
-                  <Font name="Segoe UI Bold" size="20.0" />
+                  <Font name="Segoe UI" size="30.0" />
                </font>
-            </Text>
-            <Button layoutX="470.0" layoutY="369.0" mnemonicParsing="false" onAction="#buttonEntrar" style="-fx-background-color: #222;" text="ENTRAR" textFill="ALICEBLUE">
+            </Label>
+            <Label layoutX="198.0" layoutY="264.0" text="CRM:">
                <font>
-                  <Font name="Segoe UI Bold" size="20.0" />
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField" layoutX="313.0" layoutY="260.0" prefHeight="35.0" prefWidth="250.0" />
+            <Button fx:id="buttonLogin" layoutX="383.0" layoutY="460.0" mnemonicParsing="false" onAction="#clickButtonLogin" prefHeight="45.0" prefWidth="110.0" style="-fx-background-color: black;" text="ENTRAR" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
                </font>
             </Button>
-            <Text layoutX="303.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SENHA:" wrappingWidth="73.82311600586623">
-               <font>
-                  <Font name="Segoe UI Bold" size="20.0" />
-               </font>
-            </Text>
-            <PasswordField fx:id="passwordField" layoutX="412.0" layoutY="318.0" prefHeight="36.0" prefWidth="218.0" style="-fx-background-color: lightgrey;" />
+            <PasswordField fx:id="passwordField" layoutX="313.0" layoutY="360.0" prefHeight="35.0" prefWidth="250.0" />
          </children>
-      </Pane>
-   </children>
-</AnchorPane>
+      </AnchorPane>
+   </center>
+</fx:root>

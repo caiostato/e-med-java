@@ -5,6 +5,13 @@
  */
 package classes;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import conexao.ConexaoBD;
+
 /**
  *
  * @author caios
@@ -25,10 +32,34 @@ public class Medico extends Funcionario{
     }
     
 	@Override
-    boolean login(String crm,String password){
+    boolean login(String login,String password){
         boolean result = false;
-        //consulta banco de dados e verifica ha login
+        String sql = "";
+        try {
         
+        Connection conn = ConexaoBD.conector();
+
+        sql = "SELECT * FROM medico where crm=? AND medico_senha =?";
+        PreparedStatement ps;
+        ps = conn.prepareStatement(sql);
+        ps.setString(1, login);
+        ps.setString(2, password);
+
+        ResultSet rs;
+        rs = ps.executeQuery();
+
+        if (rs.next()) {
+            String user = rs.getString("crm");
+            String pass = rs.getString("medico_senha");
+            result = true;
+        } else {
+            ps.close();
+            return result;
+        }
+	    } catch (SQLException ex) {
+	        ex.printStackTrace();
+	    }
+         
         return result;
     }
 
