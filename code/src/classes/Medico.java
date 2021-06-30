@@ -43,6 +43,7 @@ public class Medico extends Funcionario{
 		
         boolean result = false;
         String sql = "";
+        
         try {
         
         Connection conn = ConexaoBD.conector();
@@ -69,7 +70,7 @@ public class Medico extends Funcionario{
 	    }
          
         return result;
-    }
+	}
 
 	public String getCrm() {
 		return crm;

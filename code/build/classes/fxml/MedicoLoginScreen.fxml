@@ -26,5 +26,14 @@
             <Image url="@../images/medico_img_png.png" />
          </image>
       </ImageView>
+      <Button fx:id="buttonSair" layoutX="17.0" layoutY="17.0" mnemonicParsing="false" onAction="#clickButtonSair" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #222;">
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../images/back_button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

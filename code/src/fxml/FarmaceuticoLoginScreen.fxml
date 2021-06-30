@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-color: #222;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MedicoLoginScreenController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1366.0" style="-fx-background-color: #222;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FarmaceuticoLoginScreenController">
    <children>
       <Pane layoutX="480.0" prefHeight="720.0" prefWidth="1002.0" style="-fx-background-color: aliceblue;">
          <children>
@@ -21,9 +21,9 @@
             </Button>
             <PasswordField fx:id="passwordField" layoutX="420.0" layoutY="345.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: lightgray;" />
          </children></Pane>
-      <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="118.0" layoutY="231.0">
+      <ImageView fitHeight="224.0" fitWidth="224.0" layoutX="149.0" layoutY="248.0">
          <image>
-            <Image url="@../images/medico_img_png.png" />
+            <Image url="@../images/farmaceutico_img_png.png" />
          </image>
       </ImageView>
       <Button fx:id="buttonSair" layoutX="17.0" layoutY="17.0" mnemonicParsing="false" onAction="#clickButtonSair" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #222;">

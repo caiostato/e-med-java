@@ -1,5 +1,7 @@
 package controllers;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,11 +34,16 @@ public class MainPageController {
         window.setScene(new Scene(root, 1366, 720));
     }
     
-    public void clickButtonFarmaceutico(){
-        System.out.print("Hello");
+    public void clickButtonFarmaceutico() throws Exception{
+        Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/FarmaceuticoLoginScreen.fxml"));
+        Stage window = (Stage)this.buttonFarmaceutico.getScene().getWindow();
+        window.setScene(new Scene(root, 1366, 720));
     }
     
-    public void clickButtonAdmin(){
+    public void clickButtonAdmin() throws Exception{
+        Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/AdminLoginScreen.fxml"));
+        Stage window = (Stage)this.buttonAdmin.getScene().getWindow();
+        window.setScene(new Scene(root, 1366, 720));
 
     }
     
