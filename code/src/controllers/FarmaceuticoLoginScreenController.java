@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import classes.Admin;
 import classes.Farmaceutico;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,7 +52,6 @@ public class FarmaceuticoLoginScreenController {
         	
         	textField.clear();
         	passwordField.clear();
-        	
         }
     }
     
