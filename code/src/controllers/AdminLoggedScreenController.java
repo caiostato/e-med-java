@@ -29,12 +29,12 @@ public class AdminLoggedScreenController {
         // TODO
     }
     public void clickButtonAdd() throws IOException{
-	    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/FarmaceuticoAddScreen.fxml"));
+	    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/AdminCreateAcc.fxml"));
 	    Stage window = (Stage)this.buttonAdd.getScene().getWindow();
 	    window.setScene(new Scene(root, 1366, 720));
     }
     public void clickButtonDelete() throws IOException{
-	    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/FarmaceuticoDeleteScreen.fxml"));
+	    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/AdminDeleteAcc.fxml"));
 	    Stage window = (Stage)this.buttonDelete.getScene().getWindow();
 	    window.setScene(new Scene(root, 1366, 720));
     }

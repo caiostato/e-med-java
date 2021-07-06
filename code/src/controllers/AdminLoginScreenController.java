@@ -31,28 +31,32 @@ public class AdminLoginScreenController {
         // TODO
     }
     public void clickButtonEntrar() throws IOException{
-    	String username = textField.getText();
-    	String pass = passwordField.getText();
+//    	String username = textField.getText();
+//    	String pass = passwordField.getText();
+//    	
+//        Admin admin = new Admin(username,pass);
+//        
+//        Boolean result = admin.login();
+//        
+//        if(result == true) {
+//		    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/AdminLoggedScreen.fxml"));
+//		    Stage window = (Stage)this.buttonLogin.getScene().getWindow();
+//		    window.setScene(new Scene(root, 1366, 720));
+//        }
+//        else {
+//        	Alert alert = new Alert(AlertType.INFORMATION);
+//        	alert.setTitle("ERRO");
+//        	alert.setHeaderText("Erro ao tentar entrar");
+//        	alert.setContentText("Seu usuario ou sua senha estao incorretas, tente novamente");
+//        	alert.showAndWait();
+//        	
+//        	textField.clear();
+//        	passwordField.clear();
+//        }
+	    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/AdminLoggedScreen.fxml"));
+	    Stage window = (Stage)this.buttonLogin.getScene().getWindow();
+	    window.setScene(new Scene(root, 1366, 720));
     	
-        Admin admin = new Admin(username,pass);
-        
-        Boolean result = admin.login();
-        
-        if(result == true) {
-		    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/AdminLoggedScreen.fxml"));
-		    Stage window = (Stage)this.buttonLogin.getScene().getWindow();
-		    window.setScene(new Scene(root, 1366, 720));
-        }
-        else {
-        	Alert alert = new Alert(AlertType.INFORMATION);
-        	alert.setTitle("ERRO");
-        	alert.setHeaderText("Erro ao tentar entrar");
-        	alert.setContentText("Seu usuario ou sua senha estao incorretas, tente novamente");
-        	alert.showAndWait();
-        	
-        	textField.clear();
-        	passwordField.clear();
-        }
     }
     
     public void clickButtonSair() throws IOException{

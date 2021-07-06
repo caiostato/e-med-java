@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import conexao.ConexaoBD;
 
@@ -22,6 +23,8 @@ public class Medico extends Funcionario{
 	private String password;
 
     //construtor
+	public Medico() {
+	}
 	public Medico(String crm, String password) {
 		this.setCrm(crm);
 		this.setPassword(password);
@@ -33,7 +36,19 @@ public class Medico extends Funcionario{
     
     //functions
     public void solicitaMedicamento(String idMed, Integer quant){
-        //executa solicitamento    
+		try {
+			Connection conn = ConexaoBD.conector();
+			Statement st = conn.createStatement();
+			st.executeQuery("call solicitar('"+idMed+"',"+quant+");");
+			
+			ResultSet rs =st.getResultSet();
+			
+			conn.close();
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
     }
     
 	@Override

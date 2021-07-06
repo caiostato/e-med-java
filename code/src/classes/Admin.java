@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import conexao.ConexaoBD;
 
@@ -22,6 +23,9 @@ public class Admin extends Funcionario{
 	private String password;
 	
     //construtor
+	public Admin() {
+		
+	}
     public Admin(String username, String password) {
     	this.setUsername(username);
     	this.setPassword(password);
@@ -32,12 +36,78 @@ public class Admin extends Funcionario{
     }
     
     //functions
-    void addConta(Funcionario func, Integer type){
-        //adiciona conta
+    public void addConta(Medico func){ 
+		
+		try {
+			Connection conn = ConexaoBD.conector();
+			Statement st = conn.createStatement();
+			st.executeQuery("call insert_adm(1,"+func.getCrm()+",'"+func.getPassword()+"','"+func.getEmail()+"','"+func.getEmail()+"'),'"+func.getCpf()+"');");
+			
+			ResultSet rs =st.getResultSet();
+			
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    	
     }
     
-    void excConta(Funcionario func, Integer type){
+    public void addConta(Farmaceutico func){ 
+		
+		try {
+			Connection conn = ConexaoBD.conector();
+			Statement st = conn.createStatement();
+			st.executeQuery("call insert_adm(2,"+func.getCrf()+",'"+func.getPassword()+"','"+func.getEmail()+"','"+func.getEmail()+"'),'"+func.getCpf()+"');");
+			
+			ResultSet rs =st.getResultSet();
+			
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    	
+    }
+    
+    public void excConta(String id,int type){
         // exclui conta
+    	
+		if(type == 1) {
+
+			
+			try {
+				Connection conn = ConexaoBD.conector();
+				Statement st = conn.createStatement();
+				st.executeQuery("delete from medico where crm = "+id+";");
+				ResultSet rs =st.getResultSet();
+				
+				conn.close();
+				
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+			
+		}else if(type == 2) {
+			
+			try {
+				Connection conn = ConexaoBD.conector();
+				Statement st = conn.createStatement();
+				st.executeQuery("delete from farmaceutico where crf = "+id+";");
+				
+				ResultSet rs =st.getResultSet();
+				
+				conn.close();
+				
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+		}
+    	
+    	
+    	
     }
     
     @Override

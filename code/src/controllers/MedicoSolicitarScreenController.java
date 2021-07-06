@@ -6,8 +6,10 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
+import classes.Medico;
 import conexao.ConexaoBD;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,7 +56,6 @@ public class MedicoSolicitarScreenController implements Initializable{
 	TextField txtField_crm;
 	
     public void initialize(URL url, ResourceBundle rb) {
-    	// TODO
     	try {
     		Connection conn = ConexaoBD.conector();
     		System.out.print("conn: "+conn);
@@ -78,6 +79,17 @@ public class MedicoSolicitarScreenController implements Initializable{
     
 	public void clickButtonSolicitar() {
 		
+		String med = txtField_med.getText();
+		String quantidade = txtField_quantidade.getText();
+		
+		Medico medico = new Medico();
+		medico.solicitaMedicamento(med, Integer.parseInt(quantidade));
+		
+		txtField_med.clear();
+		txtField_quantidade.clear();
+		
+		//to refresh
+		clickButtonAtivar();	
 	}
 	
 	public void clickButtonVoltar() throws IOException {
@@ -87,7 +99,9 @@ public class MedicoSolicitarScreenController implements Initializable{
 		
 	}
     
+	//refresh table function
 	public void clickButtonAtivar() {
+		table.getItems().clear();
 		try {
 			Connection con = ConexaoBD.conector();
 			ResultSet rs = con.createStatement().executeQuery("select * from medicamento");

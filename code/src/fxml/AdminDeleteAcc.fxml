@@ -6,33 +6,37 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin_excluir_screen_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminDeleteAccController">
    <center>
-      <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #222;" BorderPane.alignment="CENTER">
          <children>
+            <Pane layoutX="279.0" layoutY="202.0" prefHeight="302.0" prefWidth="333.0" style="-fx-background-color: aliceblue;" />
             <Label layoutX="551.0" layoutY="51.0" text="Excluir Conta" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="305.0" layoutY="160.0" text="ID:">
+            <Label layoutX="304.0" layoutY="245.0" text="ID:">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font></Label>
-            <TextField fx:id="txtF_id" layoutX="361.0" layoutY="160.0" prefHeight="30.0" prefWidth="200.0" />
-            <RadioButton fx:id="rButton_crm" layoutX="332.0" layoutY="257.0" mnemonicParsing="false" text="MEDICO">
+            <TextField fx:id="txtF_id" layoutX="360.0" layoutY="245.0" prefHeight="30.0" prefWidth="200.0" />
+            <RadioButton fx:id="rButton_crm" layoutX="307.0" layoutY="345.0" mnemonicParsing="false" text="MEDICO">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font></RadioButton>
-            <RadioButton fx:id="rButton_crf" layoutX="452.0" layoutY="257.0" mnemonicParsing="false" text="FARMACEUTICO">
+            <RadioButton fx:id="rButton_crf" layoutX="427.0" layoutY="345.0" mnemonicParsing="false" text="FARMACEUTICO">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font></RadioButton>
-            <Button fx:id="button_excluir" layoutX="415.0" layoutY="360.0" mnemonicParsing="false" onAction="#click_button_excluir" style="-fx-background-color: black;" text="EXCLUIR" textFill="WHITE">
+            <Button fx:id="button_excluir" layoutX="394.0" layoutY="418.0" mnemonicParsing="false" onAction="#click_button_excluir" style="-fx-background-color: black;" text="EXCLUIR" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font></Button>
@@ -48,7 +52,7 @@
                 <TableColumn fx:id="col_nome1" prefWidth="147.0" text="NOME" />
               </columns>
             </TableView>
-            <Button fx:id="button_ativar" layoutX="755.0" layoutY="639.0" mnemonicParsing="false" onAction="#click_button_ativar" style="-fx-background-color: black;" text="ATIVAR" textFill="WHITE">
+            <Button fx:id="buttonAtivar" layoutX="1144.0" layoutY="640.0" mnemonicParsing="false" onAction="#clickButtonAtivar" style="-fx-background-color: black;" text="Refresh" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="12.0" />
                </font>
@@ -63,6 +67,12 @@
                   <Font name="Arial Black" size="13.0" />
                </font>
             </Label>
+            <Button layoutX="49.0" layoutY="57.0" mnemonicParsing="false" style="-fx-background-color: #222;" />
+            <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="9.0" layoutY="16.0">
+               <image>
+                  <Image url="@../images/back_button.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

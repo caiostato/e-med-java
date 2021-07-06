@@ -9,37 +9,41 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin_criar_screen_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminCreateAccController">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="565.0" layoutY="46.0" text="Criar Conta">
-               <font>
-                  <Font name="Arial Black" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="445.0" layoutY="154.0" text="NOME:">
+            <Pane layoutX="376.0" layoutY="20.0" prefHeight="677.0" prefWidth="508.0" style="-fx-background-color: aliceblue;">
+               <children>
+                  <Label layoutX="179.0" layoutY="29.0" text="Criar Conta">
+                     <font>
+                        <Font name="Arial Black" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="455.0" layoutY="154.0" text="NOME:">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
             <TextField fx:id="txtF_nome" layoutX="543.0" layoutY="152.0" prefHeight="30.0" prefWidth="200.0" />
-            <TextField fx:id="txtF_email" layoutX="543.0" layoutY="252.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="txtF_email" layoutX="543.0" layoutY="227.0" prefHeight="30.0" prefWidth="200.0" />
             <TextField fx:id="txtF_cr" layoutX="543.0" layoutY="452.0" prefHeight="30.0" prefWidth="200.0" />
-            <Button fx:id="button_criar" layoutX="596.0" layoutY="640.0" mnemonicParsing="false" onAction="#click_button_criar" style="-fx-background-color: black;" text="CRIAR" textFill="WHITE">
+            <Button fx:id="buttonCreate" layoutX="596.0" layoutY="640.0" mnemonicParsing="false" onAction="#clickButtonCreate" style="-fx-background-color: black;" text="CRIAR" textFill="WHITE">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="450.0" layoutY="254.0" text="E MAIL:">
+            <Label layoutX="450.0" layoutY="229.0" text="E MAIL:">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="445.0" layoutY="354.0" text="SENHA:">
+            <Label layoutX="478.0" layoutY="308.0" text="CPF:">
                <font>
                   <Font name="Arial Black" size="18.0" />
                </font>
@@ -49,7 +53,6 @@
                   <Font name="Arial Black" size="18.0" />
                </font>
             </Label>
-            <PasswordField fx:id="passF_senha" layoutX="543.0" layoutY="352.0" prefHeight="30.0" prefWidth="200.0" />
             <RadioButton fx:id="rButton_crf" layoutX="672.0" layoutY="560.0" mnemonicParsing="false" text="CRF">
                <font>
                   <Font name="Arial Black" size="14.0" />
@@ -60,20 +63,27 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </RadioButton>
-            <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="1130.0">
-               <image>
-                  <Image url="@../../../fotos/adm_img_png.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="button_voltar" layoutX="7.0" mnemonicParsing="false" onAction="#click_button_voltar" style="-fx-background-color: transparent;">
+            <Button fx:id="buttonVoltar" layoutX="7.0" mnemonicParsing="false" onAction="#clickButtonVoltar" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView>
+                  <ImageView fitHeight="62.0" fitWidth="62.0">
                      <image>
-                        <Image url="@../../../fotos/back_button2.png" />
+                        <Image url="@../images/back_button.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
+            <Label layoutX="447.0" layoutY="383.0" text="SENHA:">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passF_senha1" layoutX="545.0" layoutY="381.0" prefHeight="30.0" prefWidth="200.0" />
+            <TextField fx:id="txtF_cpf" layoutX="540.0" layoutY="307.0" prefHeight="30.0" prefWidth="200.0" />
+            <ImageView fitHeight="114.0" fitWidth="116.0" layoutX="1164.0">
+               <image>
+                  <Image url="@../images/adm_img_png.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

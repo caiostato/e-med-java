@@ -22,6 +22,8 @@ public class Farmaceutico extends Funcionario{
 	private String password;
 
     //construtor
+	public Farmaceutico() {
+	}
 	public Farmaceutico(String crf, String password) {
 		this.setCrf(crf);
 		this.setPassword(password);
