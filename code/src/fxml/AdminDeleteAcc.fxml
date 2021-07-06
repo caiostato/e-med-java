@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Admin_excluir_screen_Controller">
+   <center>
+      <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="551.0" layoutY="51.0" text="Excluir Conta" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="305.0" layoutY="160.0" text="ID:">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font></Label>
+            <TextField fx:id="txtF_id" layoutX="361.0" layoutY="160.0" prefHeight="30.0" prefWidth="200.0" />
+            <RadioButton fx:id="rButton_crm" layoutX="332.0" layoutY="257.0" mnemonicParsing="false" text="MEDICO">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font></RadioButton>
+            <RadioButton fx:id="rButton_crf" layoutX="452.0" layoutY="257.0" mnemonicParsing="false" text="FARMACEUTICO">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font></RadioButton>
+            <Button fx:id="button_excluir" layoutX="415.0" layoutY="360.0" mnemonicParsing="false" onAction="#click_button_excluir" style="-fx-background-color: black;" text="EXCLUIR" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font></Button>
+            <TableView fx:id="table_medico" layoutX="755.0" layoutY="160.0" prefHeight="450.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="col_crm" prefWidth="55.0" text="CRM" />
+                <TableColumn fx:id="col_nome" prefWidth="143.0" text="NOME" />
+              </columns>
+            </TableView>
+            <TableView fx:id="table_farm" layoutX="1004.0" layoutY="160.0" prefHeight="450.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="col_crf" prefWidth="49.0" text="CRF" />
+                <TableColumn fx:id="col_nome1" prefWidth="147.0" text="NOME" />
+              </columns>
+            </TableView>
+            <Button fx:id="button_ativar" layoutX="755.0" layoutY="639.0" mnemonicParsing="false" onAction="#click_button_ativar" style="-fx-background-color: black;" text="ATIVAR" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="826.0" layoutY="115.0" text="MEDICO" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="1046.0" layoutY="115.0" text="FARMACEUTICO" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

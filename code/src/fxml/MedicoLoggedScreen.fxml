@@ -10,7 +10,7 @@
    <children>
       <Pane layoutX="480.0" prefHeight="720.0" prefWidth="1002.0" style="-fx-background-color: aliceblue;">
          <children>
-            <Button fx:id="buttonEstoque" layoutX="394.0" layoutY="253.0" mnemonicParsing="false" onAction="#clickButtonEstoque" style="-fx-background-color: aliceblue;">
+            <Button fx:id="buttonSolicitar" layoutX="394.0" layoutY="253.0" mnemonicParsing="false" onAction="#clickButtonSolicitar" style="-fx-background-color: aliceblue;">
                <graphic>
                   <ImageView fitHeight="200.0" fitWidth="200.0">
                      <image>

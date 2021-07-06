@@ -27,7 +27,7 @@ public class MedicoLoggedScreenController implements Initializable{
     @FXML
     Button buttonSair;
     @FXML
-    Button buttonSolicitar; 
+    Button buttonSolicitar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
