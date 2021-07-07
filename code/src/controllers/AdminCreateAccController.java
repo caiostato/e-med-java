@@ -1,5 +1,7 @@
 package controllers;
 
+import Factory.FarmaceuticoFactory;
+import Factory.MedicoFactory;
 import classes.Admin;
 import classes.Farmaceutico;
 import classes.Medico;
@@ -45,11 +47,13 @@ public class AdminCreateAccController {
 		Admin adm = new Admin();
 		
 		if(Bcrm = true) {
-			Medico medico = new Medico(cr,senha,nome,cpf,email);
+			MedicoFactory medFactory = new MedicoFactory();
+			Medico medico = medFactory.criarFuncionario(cr, senha, nome, cpf, email);
 			adm.addConta(medico);
 		}
 		else if(Bcrf = true) {
-			Farmaceutico farmaceutico = new Farmaceutico(cr,senha,nome,cpf,email);
+			FarmaceuticoFactory farmFactory = new FarmaceuticoFactory();
+			Farmaceutico farmaceutico = farmFactory.criarFuncionario(cr, senha, nome, cpf, email);
 			adm.addConta(farmaceutico);	
 		}
 		txtF_nome.clear();
