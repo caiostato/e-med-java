@@ -1,7 +1,8 @@
+/Factory/
+/application/
+/classes/
 /conexao/
 /controllers/
-/fxml/
-/classes/
-/images/
-/Factory/
+/interfaces/
 /modelTables/
+/fxml/

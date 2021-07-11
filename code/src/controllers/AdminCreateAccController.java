@@ -1,15 +1,21 @@
 package controllers;
 
+import java.io.IOException;
+
 import Factory.FarmaceuticoFactory;
 import Factory.MedicoFactory;
 import classes.Admin;
 import classes.Farmaceutico;
 import classes.Medico;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AdminCreateAccController {
 	
@@ -62,4 +68,10 @@ public class AdminCreateAccController {
 		passF_senha.clear();
 		txtF_cpf.clear();		
 	}
+	
+    public void clickButtonVoltar() throws IOException{
+	    Parent root = (Parent)FXMLLoader.load(this.getClass().getResource("/fxml/AdminLoggedScreen.fxml"));
+	    Stage window = (Stage)this.buttonVoltar.getScene().getWindow();
+	    window.setScene(new Scene(root, 1366, 720));
+    }
 }
